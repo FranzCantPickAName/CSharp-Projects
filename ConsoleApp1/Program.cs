@@ -124,4 +124,14 @@ Console.WriteLine(word.GetType());
 Console.WriteLine(varNumber.GetType());
 Console.WriteLine(userNumber);
 
+string userInput = Console.ReadLine();
+bool userInputABC = userInput == "ABC";
+bool userInputNotABC = userInput != "ABC";
+bool userInputNotABCTwo = !(userInput == "ABC");
+
+Console.WriteLine(userInputABC);
+Console.WriteLine(userInputNotABC);
+Console.WriteLine(userInputNotABCTwo);
+
+
 Console.ReadKey();
