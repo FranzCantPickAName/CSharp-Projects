@@ -99,7 +99,14 @@ Console.WriteLine(title);
 double z = 10 + 4 * 30 / 10;
 Console.WriteLine(z); //Output: 22
 
-Console.ReadKey();
-
 // test from kambiz
 // test from Soheil
+
+var word = "Soheil";
+var varNumber = 11;
+var userNumber = Console.ReadLine();
+Console.WriteLine(word.GetType());
+Console.WriteLine(varNumber.GetType());
+Console.WriteLine(userNumber);
+
+Console.ReadKey();
