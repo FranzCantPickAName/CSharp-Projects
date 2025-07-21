@@ -1,4 +1,30 @@
 ﻿
+string myNumber = "100 0";
+int parsedNumber = 0;
+bool conversionSuccess = false;
+
+conversionSuccess = int.TryParse(myNumber, out parsedNumber);
+
+if (conversionSuccess)
+{
+    Console.WriteLine("Conversion was successful." + parsedNumber);
+}
+else
+{
+    Console.WriteLine("Conversion failed.");
+}
+
+string myNumber2 = "2000";
+int convertedNumber = 0;
+
+convertedNumber = Convert.ToInt32(myNumber2);
+
+Console.WriteLine(convertedNumber);
+
+int myAge = 0;
+string myAgeString = myAge.ToString();
+
+
 string userInput;
 
 
