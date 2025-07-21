@@ -1,29 +1,36 @@
-﻿
-string myNumber = "100 0";
-int parsedNumber = 0;
-bool conversionSuccess = false;
+﻿List<string> words = new List<string>();
+Console.WriteLine("Count of elements is " + words.Count);
 
-conversionSuccess = int.TryParse(myNumber, out parsedNumber);
+words.Add("Hello");
+Console.WriteLine("Count of elements is " + words.Count);
 
-if (conversionSuccess)
+List<string> words2 = new List<string>
 {
-    Console.WriteLine("Conversion was successful." + parsedNumber);
-}
-else
+    "one",
+    "two",
+    "three"
+};
+
+//words2.Remove("two");
+//words2.RemoveAt(0);
+
+words2.AddRange(new[]  { "four", "five", "six" });
+
+Console.WriteLine("Count of elements is " + words2.Count);
+Console.WriteLine("Index of element 'four' is: " + words2.IndexOf("four"));
+Console.WriteLine("Index of element 'seven' is: " + words2.IndexOf("seven"));
+
+Console.WriteLine("Does the list contain 'four'? : " + words2.Contains("four"));
+Console.WriteLine("Does the list contain 'seven'? : " + words2.Contains("seven"));
+
+foreach (string word in words2)
 {
-    Console.WriteLine("Conversion failed.");
+    Console.WriteLine(word);
 }
 
-string myNumber2 = "2000";
-int convertedNumber = 0;
 
-convertedNumber = Convert.ToInt32(myNumber2);
 
-Console.WriteLine(convertedNumber);
-
-int myAge = 0;
-string myAgeString = myAge.ToString();
-
+//words2[3] = "not three";
 
 string userInput;
 
