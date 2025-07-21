@@ -23,3 +23,9 @@ List<int> GetOnlyPositive(int[] numbers, out int countOfNonPositive)
     }
     return result;
 }
+
+Console.WriteLine(countOfNonPositiveNumbers);
+foreach (int number in onlyPositive)
+{
+    Console.WriteLine(onlyPositive[number]);
+}
