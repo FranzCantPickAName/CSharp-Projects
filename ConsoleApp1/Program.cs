@@ -10,6 +10,14 @@ Product product4 = new Product();
 PersianCalendar myPersianCalendar = new PersianCalendar();
 
 string myPersianConvertedDateTime = myPersianCalendar.GetYear(DateTime.Now) + "/" + myPersianCalendar.GetMonth(DateTime.Now) + "/" + myPersianCalendar.GetDayOfMonth(DateTime.Now);
+string userPersianDateTime;
+string[] userSeperatedPersianDateTime;
+
+userPersianDateTime = Console.ReadLine();
+userSeperatedPersianDateTime = userPersianDateTime.Split('/');
+
+DateTime userGregoianDateTime = Convert.ToDateTime(Console.ReadLine());
+string userConvertedPersianDateTime = myPersianCalendar.GetYear(userGregoianDateTime) + "/" + myPersianCalendar.GetMonth(userGregoianDateTime) + "/" + myPersianCalendar.GetDayOfMonth(userGregoianDateTime);
 
 product1.productID = 1001;
 product1.productName = "Mobile";
@@ -34,6 +42,8 @@ Console.WriteLine("Product cost: " + product1.cost);
 Console.WriteLine("Quantity in stock: " + product1.quantityInStock);
 Console.WriteLine("Product produce Date and Time: " + product1.birthDateTime);
 Console.WriteLine("Product produce Date and Time: " + product1.persianbirthDateTime);
+Console.WriteLine("User birth date in Gregorian calendar is: " + myPersianCalendar.ToDateTime(Convert.ToInt16(userSeperatedPersianDateTime[0]), Convert.ToInt16(userSeperatedPersianDateTime[1]), Convert.ToInt16(userSeperatedPersianDateTime[2]), 0, 0, 0, 0));
+Console.WriteLine("User birth date in Persian calendar is: " + userConvertedPersianDateTime);
 
 Console.ReadKey();
 public class Product
