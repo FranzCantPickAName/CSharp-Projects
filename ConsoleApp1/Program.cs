@@ -25,3 +25,4 @@ Console.WriteLine(double.MaxValue);
 Console.WriteLine(double.MinValue);
 
 Console.ReadKey();
+
