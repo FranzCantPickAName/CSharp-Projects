@@ -45,6 +45,22 @@ Console.WriteLine("Product produce Date and Time: " + product1.persianbirthDateT
 Console.WriteLine("User birth date in Gregorian calendar is: " + myPersianCalendar.ToDateTime(Convert.ToInt16(userSeperatedPersianDateTime[0]), Convert.ToInt16(userSeperatedPersianDateTime[1]), Convert.ToInt16(userSeperatedPersianDateTime[2]), 0, 0, 0, 0));
 Console.WriteLine("User birth date in Persian calendar is: " + userConvertedPersianDateTime);
 
+var internationPizzaDay = new DateTime(2023, 2, 9);
+
+Console.WriteLine();
+Console.WriteLine("Year: " + internationPizzaDay.Year);
+Console.WriteLine("Month: " + internationPizzaDay.Month);
+Console.WriteLine("Day: " + internationPizzaDay.Day);
+Console.WriteLine("Day of the week: " + internationPizzaDay.DayOfWeek);
+
+var internationPizzaDayNext = internationPizzaDay.AddYears(1);
+
+Console.WriteLine();
+Console.WriteLine("Year: " + internationPizzaDayNext.Year);
+Console.WriteLine("Month: " + internationPizzaDayNext.Month);
+Console.WriteLine("Day: " + internationPizzaDayNext.Day);
+Console.WriteLine("Day of the week: " + internationPizzaDayNext.DayOfWeek);
+
 Console.ReadKey();
 public class Product
 {
