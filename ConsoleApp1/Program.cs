@@ -1,4 +1,8 @@
-﻿using System.Globalization;
+﻿using ConsoleApp1;
+using System.Globalization;
+
+
+
 Product product1, product2, product3;
 
 product1 = new Product();
@@ -62,13 +66,29 @@ Console.WriteLine("Day: " + internationPizzaDayNext.Day);
 Console.WriteLine("Day of the week: " + internationPizzaDayNext.DayOfWeek);
 
 Console.ReadKey();
-public class Product
+
+public class ForeignProduct: ConsoleApp1.Product
 {
-    public int productID;
-    public string? productName;
-    public double cost;
-    public int quantityInStock;
-    public DateTime birthDateTime;
-    public string? persianbirthDateTime;
+    public void MyMethod()
+    {
+        productID = 1;
+        productName = null;
+        cost = 0;
+        quantityInStock = 0;
+        birthDateTime = DateTime.Now;
+    }
+}
+
+public class ForeignOtherProduct
+{
+    public void MyMethod()
+    {
+        ConsoleApp1.Product product = new ConsoleApp1.Product();
+        product.productID = 1;
+        product.productName = null;
+        product.cost = 0 ;
+        product.quantityInStock = 0;
+        product.birthDateTime = DateTime.Now;
+    }
 }
 
