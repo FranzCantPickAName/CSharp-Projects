@@ -6,89 +6,98 @@ using System.Globalization;
 Product product1, product2, product3;
 
 product1 = new Product();
+Task.Delay(1000).Wait();
+Product.SetProductTotalNoProduct(Product.GetProductTotalNoProduct() + 1);
 product2 = new Product();
+Task.Delay(1000).Wait();
+Product.SetProductTotalNoProduct(Product.GetProductTotalNoProduct() + 1);
 product3 = new Product();
+Task.Delay(1000).Wait();
+Product.SetProductTotalNoProduct(Product.GetProductTotalNoProduct() + 1);
 
 Product product4 = new Product();
 
-PersianCalendar myPersianCalendar = new PersianCalendar();
 
-string myPersianConvertedDateTime = myPersianCalendar.GetYear(DateTime.Now) + "/" + myPersianCalendar.GetMonth(DateTime.Now) + "/" + myPersianCalendar.GetDayOfMonth(DateTime.Now);
-string userPersianDateTime;
-string[] userSeperatedPersianDateTime;
-
-userPersianDateTime = Console.ReadLine();
-userSeperatedPersianDateTime = userPersianDateTime.Split('/');
-
-DateTime userGregoianDateTime = Convert.ToDateTime(Console.ReadLine());
-string userConvertedPersianDateTime = myPersianCalendar.GetYear(userGregoianDateTime) + "/" + myPersianCalendar.GetMonth(userGregoianDateTime) + "/" + myPersianCalendar.GetDayOfMonth(userGregoianDateTime);
-
-product1.productID = 1001;
-product1.productName = "Mobile";
-product1.cost = 20000;
-product1.quantityInStock = 1200;
-product1.birthDateTime = new DateTime(1990,01,20,0,0,0,0);
+product1.SetProductID(1001);
+product1.SetProductName("Mobile");
+product1.SetProductCost(20000);
+product1.SetProductQuantityInStock(1200);
+product1.SetProductDateTime(new DateTime(1990,01,20,0,0,0,0));
 //product1.persianbirthDateTime = Convert.ToString(new DateTime(2025, 07, 26, myPersianCalendar));
-product1.persianbirthDateTime = myPersianConvertedDateTime;
-product2.productID = 1002;
-product2.productName = "Laptop";
-product2.cost = 40000;
-product2.quantityInStock = 900;
-product3.productID = 1003;
-product3.productName = "Speaker";
-product3.cost = 10000;
-product3.quantityInStock = 1100;
 
-Console.WriteLine("Product 1:");
-Console.WriteLine("Product ID: " + product1.productID);
-Console.WriteLine("Product Name: " + product1.productName);
-Console.WriteLine("Product cost: " + product1.cost);
-Console.WriteLine("Quantity in stock: " + product1.quantityInStock);
-Console.WriteLine("Product produce Date and Time: " + product1.birthDateTime);
-Console.WriteLine("Product produce Date and Time: " + product1.persianbirthDateTime);
-Console.WriteLine("User birth date in Gregorian calendar is: " + myPersianCalendar.ToDateTime(Convert.ToInt16(userSeperatedPersianDateTime[0]), Convert.ToInt16(userSeperatedPersianDateTime[1]), Convert.ToInt16(userSeperatedPersianDateTime[2]), 0, 0, 0, 0));
-Console.WriteLine("User birth date in Persian calendar is: " + userConvertedPersianDateTime);
+product2.SetProductID(1002);
+product2.SetProductName("Laptop");
+product2.SetProductCost(40000);
+product2.SetProductQuantityInStock(900);
+product2.SetProductDateTime(new DateTime(1990, 01, 20, 0, 0, 0, 0));
 
-var internationPizzaDay = new DateTime(2023, 2, 9);
+product3.SetProductID(1003);
+product3.SetProductName("Speaker");
+product3.SetProductCost(10000);
+product3.SetProductQuantityInStock(1100);
+product3.SetProductDateTime(new DateTime(1990, 01, 20, 0, 0, 0, 0));
 
-Console.WriteLine();
-Console.WriteLine("Year: " + internationPizzaDay.Year);
-Console.WriteLine("Month: " + internationPizzaDay.Month);
-Console.WriteLine("Day: " + internationPizzaDay.Day);
-Console.WriteLine("Day of the week: " + internationPizzaDay.DayOfWeek);
+product1.CalculateTax();
+product2.CalculateTax();
+product3.CalculateTax();
 
-var internationPizzaDayNext = internationPizzaDay.AddYears(1);
+Console.WriteLine("\n Product 1:");
+Console.WriteLine("Product ID: " + product1.GetProductID());
+Console.WriteLine("Product Name: " + product1.GetProductName());
+Console.WriteLine("Product cost: " + product1.GetProductCost());
+Console.WriteLine("Quantity in stock: " + product1.GetProductQuantityInStockID());
+Console.WriteLine("Date of produce: " + product1.GetProductDateOfProduce());
+Console.WriteLine("Product tax is: " + product1.GetProductTax());
 
-Console.WriteLine();
-Console.WriteLine("Year: " + internationPizzaDayNext.Year);
-Console.WriteLine("Month: " + internationPizzaDayNext.Month);
-Console.WriteLine("Day: " + internationPizzaDayNext.Day);
-Console.WriteLine("Day of the week: " + internationPizzaDayNext.DayOfWeek);
+Console.WriteLine("\n Product 2:");
+Console.WriteLine("Product ID: " + product2.GetProductID());
+Console.WriteLine("Product Name: " + product2.GetProductName());
+Console.WriteLine("Product cost: " + product2.GetProductCost());
+Console.WriteLine("Quantity in stock: " + product2.GetProductQuantityInStockID());
+Console.WriteLine("Date of produce: " + product2.GetProductDateOfProduce());
+Console.WriteLine("Product tax is: " + product2.GetProductTax());
+
+Console.WriteLine("\n Product 3:");
+Console.WriteLine("Product ID: " + product3.GetProductID());
+Console.WriteLine("Product Name: " + product3.GetProductName());
+Console.WriteLine("Product cost: " + product3.GetProductCost());
+Console.WriteLine("Quantity in stock: " + product3.GetProductQuantityInStockID());
+Console.WriteLine("Date of produce: " + product3.GetProductDateOfProduce());
+Console.WriteLine("Product tax is: " + product3.GetProductTax());
+
+Console.WriteLine("\nTotal number of products: " + Product.GetProductTotalNoProduct());
+Console.WriteLine("Total quantity of products: " + Product.GetTotalQuantity(product1, product2, product3));
+Console.WriteLine("Category name is: " + Product.GetCategoryName());
+
 
 Console.ReadKey();
 
-public class ForeignProduct: ConsoleApp1.Product
-{
-    public void MyMethod()
-    {
-        productID = 1;
-        productName = null;
-        cost = 0;
-        quantityInStock = 0;
-        birthDateTime = DateTime.Now;
-    }
-}
+//public class ForeignProduct: ConsoleApp1.Product
+//{
+//    public void MyMethod()
+//    {
+//        productID = 1;
+//        productName = null;
+//        cost = 0;
+//        quantityInStock = 0;
+//        birthDateTime = DateTime.Now;
+//        //MyMethod1();
+//        //MyMethod2();
+//    }
+//}
 
-public class ForeignOtherProduct
-{
-    public void MyMethod()
-    {
-        ConsoleApp1.Product product = new ConsoleApp1.Product();
-        product.productID = 1;
-        product.productName = null;
-        product.cost = 0 ;
-        product.quantityInStock = 0;
-        product.birthDateTime = DateTime.Now;
-    }
-}
+//public class ForeignOtherProduct
+//{
+//    public void MyMethod()
+//    {
+//        ConsoleApp1.Product product = new ConsoleApp1.Product();
+//        product.productID = 1;
+//        product.productName = null;
+//        product.cost = 0 ;
+//        product.quantityInStock = 0;
+//        product.birthDateTime = DateTime.Now;
+//        //MyMethod1();
+//        //MyMethod2();
+//    }
+//}
 
