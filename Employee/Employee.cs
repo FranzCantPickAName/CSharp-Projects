@@ -2,32 +2,87 @@
 {
     public class Employee
     {
-        public int empID;
-        public string empName;
-        public string empJob;
+        private int _empID;
+        private string _empName;
+        private string _empJob;
 
-        public static string companyName;
+        private double _salary = 5000;
+        private double _tax;
+
+        private static string _companyName;
+
+        public int EmpID
+        {
+            set
+            {
+                if (value > -100)
+                {
+                    _empID = value;
+                }
+            }
+            get { return _empID; }
+        }
+
+        public string EmpName
+        {
+            set { _empName = value; }
+            get { return _empName; }
+        }
+
+        public string EmpJob
+        {
+            set { _empJob = value; }
+            get { return _empJob; }
+        }
+
+        public static string CompanyName
+        {
+            set { _companyName = value; }
+            get { return _companyName; }
+        }
+
+        public double Salary
+        {
+            get { return _salary; }
+        }
+
+        public double Tax
+        {
+            set
+            {
+                if (value >= 0 && value <= 100)
+                {
+                    _tax = value;
+                }
+            }
+        }
+
+        public double CalculateNetSalary()
+        {
+            double netSalary = Salary - _tax;
+            return netSalary;
+        }
 
         public Employee(int empID, string empName, string empJob)
         {
-            this.empID = empID;
-            this.empName = empName;
-            this.empJob = empJob;
+            _empID = empID;
+            _empName = empName;
+            _empJob = empJob;
         }
 
         public Employee(int empID, string empName)
         {
-            this.empID = empID;
-            this.empName = empName;
+            _empID = empID;
+            _empName = empName;
         }
 
         public Employee()
         {
-            empID = 1;
+            _empID = 1;
         }
         static Employee()
         {
-            companyName = "ABC Industries";
+            _companyName = "ABC Industries";
         }
 
     }

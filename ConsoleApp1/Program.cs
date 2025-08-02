@@ -27,42 +27,45 @@ Student s = new Student();
 
 //Employee emp1 = new Employee(101,"Scott","Manager");
 Employee emp1 = new Employee();
-emp1.empID = 101;
-emp1.empName = "Scott";
-emp1.empJob = "Manager";
+emp1.EmpID = 101;
+emp1.EmpName = "Scott";
+emp1.EmpJob = "Manager";
+emp1.Tax = 50;
 
 //Employee emp2 = new Employee(102,"Allen","Asst. Manager");
 Employee emp2 = new Employee(102,"Allen");
-emp2.empJob = "Asst. Manager";
+emp2.EmpJob = "Asst. Manager";
 
 Employee emp3 = new Employee(103,"Anna","Clerk");
 
-Employee emp4 = new Employee() { empName = "Ford", empJob = "Executive" };
+Employee emp4 = new Employee() { EmpName = "Ford", EmpJob = "Executive" };
 
-Console.WriteLine(Employee.companyName);
+Console.WriteLine(Employee.CompanyName + "\n");
 
 Console.WriteLine("First employee: ");
-Console.WriteLine(emp1.empID);
-Console.WriteLine(emp1.empName);
-Console.WriteLine(emp1.empJob);
+Console.WriteLine(emp1.EmpID);
+Console.WriteLine(emp1.EmpName);
+Console.WriteLine(emp1.EmpJob);
+Console.WriteLine(emp1.Salary);
+Console.WriteLine(emp1.CalculateNetSalary());
 Console.WriteLine();
 
 Console.WriteLine("Second employee: ");
-Console.WriteLine(emp2.empID);
-Console.WriteLine(emp2.empName);
-Console.WriteLine(emp2.empJob);
+Console.WriteLine(emp2.EmpID);
+Console.WriteLine(emp2.EmpName);
+Console.WriteLine(emp2.EmpJob);
 Console.WriteLine();
 
 Console.WriteLine("Third employee: ");
-Console.WriteLine(emp3.empID);
-Console.WriteLine(emp3.empName);
-Console.WriteLine(emp3.empJob);
+Console.WriteLine(emp3.EmpID);
+Console.WriteLine(emp3.EmpName);
+Console.WriteLine(emp3.EmpJob);
 Console.WriteLine();
 
 Console.WriteLine("Fourth employee: ");
-Console.WriteLine(emp4.empID);
-Console.WriteLine(emp4.empName);
-Console.WriteLine(emp4.empJob);
+Console.WriteLine(emp4.EmpID);
+Console.WriteLine(emp4.EmpName);
+Console.WriteLine(emp4.EmpJob);
 Console.WriteLine();
 
 product1.SetProductID(1001);
