@@ -17,6 +17,13 @@ Product.SetProductTotalNoProduct(Product.GetProductTotalNoProduct() + 1);
 
 Product product4 = new Product();
 
+Student s = new Student();
+
+s.DisplaySubjects("Theory of Computation", "Computer Networks", "Discrete Mathematics", "Digital Systems");
+
+s.DisplayMarks(80, 44, 60);
+
+Console.WriteLine("Fib of 7 is: " + s.Fib(7));
 
 product1.SetProductID(1001);
 product1.SetProductName("Mobile");
@@ -37,9 +44,14 @@ product3.SetProductCost(10000);
 product3.SetProductQuantityInStock(1100);
 product3.SetProductDateTime(new DateTime(1990, 01, 20, 0, 0, 0, 0));
 
-product1.CalculateTax();
-product2.CalculateTax();
-product3.CalculateTax();
+double p = 11;
+double q = 10;
+double r;
+product1.CalculateTax(q);
+product2.CalculateTax(out r);
+Console.WriteLine("R: " + r);
+Console.WriteLine("Q: " + q);
+product3.CalculateTax(percentageLow:9, percentageHigh:13);
 
 Console.WriteLine("\n Product 1:");
 Console.WriteLine("Product ID: " + product1.GetProductID());

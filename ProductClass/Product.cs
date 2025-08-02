@@ -13,6 +13,8 @@
         private readonly string dateOfProduce;
         private double calculatedTax;
 
+        
+
         public Product()
         {
             //totalNoProducts = 0;
@@ -111,6 +113,9 @@
             MyMethod2();
         }
 
+        /// <summary>
+        /// This calculates with 10% tax rate
+        /// </summary>
         public void CalculateTax()
         {
             double tax;
@@ -122,6 +127,47 @@
             else
             {
                 tax = cost * 12.5 / 100;
+            }
+            calculatedTax = tax;
+        }
+
+        /// <summary>
+        /// This takes one parameter
+        /// </summary>
+        /// <param name="percentage">The tax percentage (default 10%)</param>
+        public void CalculateTax(out double percentage)
+        {
+            double tax;
+            percentage = 10;
+            percentage = percentage / 100;
+
+            if (cost <= 20000)
+            {
+                tax = cost * percentage / 100;
+            }
+            else
+            {
+                tax = cost * 12.5 / 100;
+            }
+            calculatedTax = tax;
+        }
+
+        /// <summary>
+        /// This takes two parameters
+        /// </summary>
+        /// <param name="percentageLow">The low tax threshold (default 100%)</param>
+        /// <param name="percentageHigh">The high tax percentage (default 100%)</param>
+        public void CalculateTax(double percentageLow, double percentageHigh = 10)
+        {
+            double tax;
+
+            if (cost <= 20000)
+            {
+                tax = cost * percentageLow / 100;
+            }
+            else
+            {
+                tax = cost * percentageHigh / 100;
             }
             calculatedTax = tax;
         }
