@@ -19,11 +19,51 @@ Product product4 = new Product();
 
 Student s = new Student();
 
-s.DisplaySubjects("Theory of Computation", "Computer Networks", "Discrete Mathematics", "Digital Systems");
+//s.DisplaySubjects("Theory of Computation", "Computer Networks", "Discrete Mathematics", "Digital Systems");
 
-s.DisplayMarks(80, 44, 60);
+//s.DisplayMarks(80, 44, 60);
 
-Console.WriteLine("Fib of 7 is: " + s.Fib(7));
+//Console.WriteLine("Fib of 7 is: " + s.Fib(7));
+
+//Employee emp1 = new Employee(101,"Scott","Manager");
+Employee emp1 = new Employee();
+emp1.empID = 101;
+emp1.empName = "Scott";
+emp1.empJob = "Manager";
+
+//Employee emp2 = new Employee(102,"Allen","Asst. Manager");
+Employee emp2 = new Employee(102,"Allen");
+emp2.empJob = "Asst. Manager";
+
+Employee emp3 = new Employee(103,"Anna","Clerk");
+
+Employee emp4 = new Employee() { empName = "Ford", empJob = "Executive" };
+
+Console.WriteLine(Employee.companyName);
+
+Console.WriteLine("First employee: ");
+Console.WriteLine(emp1.empID);
+Console.WriteLine(emp1.empName);
+Console.WriteLine(emp1.empJob);
+Console.WriteLine();
+
+Console.WriteLine("Second employee: ");
+Console.WriteLine(emp2.empID);
+Console.WriteLine(emp2.empName);
+Console.WriteLine(emp2.empJob);
+Console.WriteLine();
+
+Console.WriteLine("Third employee: ");
+Console.WriteLine(emp3.empID);
+Console.WriteLine(emp3.empName);
+Console.WriteLine(emp3.empJob);
+Console.WriteLine();
+
+Console.WriteLine("Fourth employee: ");
+Console.WriteLine(emp4.empID);
+Console.WriteLine(emp4.empName);
+Console.WriteLine(emp4.empJob);
+Console.WriteLine();
 
 product1.SetProductID(1001);
 product1.SetProductName("Mobile");
@@ -53,33 +93,33 @@ Console.WriteLine("R: " + r);
 Console.WriteLine("Q: " + q);
 product3.CalculateTax(percentageLow:9, percentageHigh:13);
 
-Console.WriteLine("\n Product 1:");
-Console.WriteLine("Product ID: " + product1.GetProductID());
-Console.WriteLine("Product Name: " + product1.GetProductName());
-Console.WriteLine("Product cost: " + product1.GetProductCost());
-Console.WriteLine("Quantity in stock: " + product1.GetProductQuantityInStockID());
-Console.WriteLine("Date of produce: " + product1.GetProductDateOfProduce());
-Console.WriteLine("Product tax is: " + product1.GetProductTax());
+//Console.WriteLine("\n Product 1:");
+//Console.WriteLine("Product ID: " + product1.GetProductID());
+//Console.WriteLine("Product Name: " + product1.GetProductName());
+//Console.WriteLine("Product cost: " + product1.GetProductCost());
+//Console.WriteLine("Quantity in stock: " + product1.GetProductQuantityInStockID());
+//Console.WriteLine("Date of produce: " + product1.GetProductDateOfProduce());
+//Console.WriteLine("Product tax is: " + product1.GetProductTax());
 
-Console.WriteLine("\n Product 2:");
-Console.WriteLine("Product ID: " + product2.GetProductID());
-Console.WriteLine("Product Name: " + product2.GetProductName());
-Console.WriteLine("Product cost: " + product2.GetProductCost());
-Console.WriteLine("Quantity in stock: " + product2.GetProductQuantityInStockID());
-Console.WriteLine("Date of produce: " + product2.GetProductDateOfProduce());
-Console.WriteLine("Product tax is: " + product2.GetProductTax());
+//Console.WriteLine("\n Product 2:");
+//Console.WriteLine("Product ID: " + product2.GetProductID());
+//Console.WriteLine("Product Name: " + product2.GetProductName());
+//Console.WriteLine("Product cost: " + product2.GetProductCost());
+//Console.WriteLine("Quantity in stock: " + product2.GetProductQuantityInStockID());
+//Console.WriteLine("Date of produce: " + product2.GetProductDateOfProduce());
+//Console.WriteLine("Product tax is: " + product2.GetProductTax());
 
-Console.WriteLine("\n Product 3:");
-Console.WriteLine("Product ID: " + product3.GetProductID());
-Console.WriteLine("Product Name: " + product3.GetProductName());
-Console.WriteLine("Product cost: " + product3.GetProductCost());
-Console.WriteLine("Quantity in stock: " + product3.GetProductQuantityInStockID());
-Console.WriteLine("Date of produce: " + product3.GetProductDateOfProduce());
-Console.WriteLine("Product tax is: " + product3.GetProductTax());
+//Console.WriteLine("\n Product 3:");
+//Console.WriteLine("Product ID: " + product3.GetProductID());
+//Console.WriteLine("Product Name: " + product3.GetProductName());
+//Console.WriteLine("Product cost: " + product3.GetProductCost());
+//Console.WriteLine("Quantity in stock: " + product3.GetProductQuantityInStockID());
+//Console.WriteLine("Date of produce: " + product3.GetProductDateOfProduce());
+//Console.WriteLine("Product tax is: " + product3.GetProductTax());
 
-Console.WriteLine("\nTotal number of products: " + Product.GetProductTotalNoProduct());
-Console.WriteLine("Total quantity of products: " + Product.GetTotalQuantity(product1, product2, product3));
-Console.WriteLine("Category name is: " + Product.GetCategoryName());
+//Console.WriteLine("\nTotal number of products: " + Product.GetProductTotalNoProduct());
+//Console.WriteLine("Total quantity of products: " + Product.GetTotalQuantity(product1, product2, product3));
+//Console.WriteLine("Category name is: " + Product.GetCategoryName());
 
 
 Console.ReadKey();
