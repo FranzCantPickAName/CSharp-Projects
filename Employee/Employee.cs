@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1
 {
-    public class Employee
+    public class EmployeeOld
     {
         private int _empID;
         private string _empName;
@@ -63,24 +63,24 @@
             return netSalary;
         }
 
-        public Employee(int empID, string empName, string empJob)
+        public EmployeeOld(int empID, string empName, string empJob)
         {
             _empID = empID;
             _empName = empName;
             _empJob = empJob;
         }
 
-        public Employee(int empID, string empName)
+        public EmployeeOld(int empID, string empName)
         {
             _empID = empID;
             _empName = empName;
         }
 
-        public Employee()
+        public EmployeeOld()
         {
             _empID = 1;
         }
-        static Employee()
+        static EmployeeOld()
         {
             _companyName = "ABC Industries";
         }
