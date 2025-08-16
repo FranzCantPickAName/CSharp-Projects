@@ -1,6 +1,13 @@
 ﻿using ConsoleApp1;
+using MyClasses;
 using System.Globalization;
 
+
+Car car = new Car();
+
+Console.WriteLine(car[0]);
+car[0] = "Nissan";
+Console.WriteLine(car[0]);
 
 
 Product product1, product2, product3;
