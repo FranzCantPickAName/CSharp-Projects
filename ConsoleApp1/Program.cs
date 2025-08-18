@@ -17,6 +17,7 @@ using System.Xml;
 
 //create object of Manager
 Manager mgr1 = new Manager(102, "Allen", "New York", "Accounting");
+mgr1.DateOfBirth = Convert.ToDateTime("1990-07-15");
 //mgr1.EmpID = 102;
 //mgr1.EmpName = "Allen";
 //mgr1.Location = "New York";
@@ -24,6 +25,7 @@ Manager mgr1 = new Manager(102, "Allen", "New York", "Accounting");
 Console.WriteLine("Object of Child class (Manager): ");
 Console.WriteLine(mgr1.EmpID);
 Console.WriteLine(mgr1.EmpName);
+Console.WriteLine(mgr1.GetAge());
 Console.WriteLine(mgr1.Location);
 Console.WriteLine(mgr1.DepartmentName);
 Console.WriteLine(mgr1.GetTotalSalesOfTheYear());
