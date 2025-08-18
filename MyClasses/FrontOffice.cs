@@ -1,7 +1,8 @@
 ﻿
-namespace MyClasses
+namespace FrontOffice
 {
-    internal class FrontOffice
-    {
-    }
+
+
 }
+
+
