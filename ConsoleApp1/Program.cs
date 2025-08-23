@@ -1,27 +1,42 @@
-﻿
-byte myByteNum = 10;
-int myIntNum = 20;
-char myCharNum = 'Z';
-double myDoubleNum = 16;
+﻿using HR;
+using MyManager = HR.Mgr;
+using HR.Mgr;
+using FrontOffice;
+using static System.Console;
+using Warehouse;
 
-Console.WriteLine(myByteNum);
-Console.WriteLine(default(byte));
-Console.WriteLine(byte.MaxValue);
-Console.WriteLine(byte.MinValue);
+IManager manager;
+manager = new Manager();
 
-Console.WriteLine(myIntNum);
-Console.WriteLine(default(int));
-Console.WriteLine(int.MaxValue);
-Console.WriteLine(int.MinValue);
+MyManager.IManager myManager = new MyManager.Manager();
 
-Console.WriteLine(myCharNum);
-Console.WriteLine(default(char));
-Console.WriteLine(char.MaxValue);
-Console.WriteLine(char.MinValue);
+CustomerInquiry customerInquiry = new CustomerInquiry();
 
-Console.WriteLine(myDoubleNum);
-Console.WriteLine(default(double));
-Console.WriteLine(double.MaxValue);
-Console.WriteLine(double.MinValue);
+WriteLine("Manager class");
+WriteLine();
 
-Console.ReadKey();
+Product product = new Product();
+
+product.ProductID = 101;
+product.Cost = 1000;
+
+product.CallGetTax();
+
+WriteLine();
+
+WriteLine(Country.CountryName);
+WriteLine(Country.NoOfStates);
+WriteLine(Country.GetNoOfCities());
+
+Person person = new Person();
+person.PersonName = "John";
+person.Email = "john@gmail.com";
+//person.AgeGroup = ((int) AgeGroupEnumeration.Adult).ToString();
+
+//WriteLine(person.AgeGroup);
+//WriteLine(person.AgeGroup);
+
+ReadKey();
+
+
+
